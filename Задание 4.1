@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace windowsform
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            
+
+            double B(int n)
+            {
+            if (n < 1) throw new ArgumentOutOfRangeException();
+            return n == 1 ? 5 : B(n - 1) / (n * n + n + 1);
+            }
+
+            string x = textBox1.Text;
+            int N = Convert.ToInt32(x);
+            string R;
+            for (int i = 1; i <= N; ++i)
+            {
+               R = ("b{0,-2} = {1}", i, B(i)).ToString();
+                MessageBox.Show(R);
+            }
+            Console.ReadLine();
+        }
+        
+    }
+}
+
